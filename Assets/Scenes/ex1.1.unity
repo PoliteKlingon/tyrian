@@ -207,6 +207,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1051371960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1051371962}
+  - component: {fileID: 1051371961}
+  m_Layer: 0
+  m_Name: MeteorFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1051371961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051371960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381c1c7fad1f9aa77b77ed39beb2dd25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meteorPrefab: {fileID: 425970546502634278, guid: 4b57aff485c2b4a51942a0e2ce8f8a63, type: 3}
+  delayMin: 0.1
+  delayMax: 0.5
+  _meteorRadius: 1
+  _meteorSpeed: 20
+--- !u!4 &1051371962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051371960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4880419, y: -0.2022259, z: -0.2831053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1164315845
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +461,7 @@ GameObject:
   - component: {fileID: 1352702066}
   - component: {fileID: 1352702070}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,8 +702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaa3be382e55f3b6951303d2a2af9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -10
-  maxX: 10
+  sizeX: 20
+  sizeZ: 20
 --- !u!1 &1818088283
 GameObject:
   m_ObjectHideFlags: 0

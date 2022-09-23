@@ -25,16 +25,25 @@ public class EnvironmentProps : MonoBehaviour
         }
     }
 
-    public float minX;
-    public float maxX;
-
+    public float sizeX;
+    public float sizeZ;
     
-    public Vector3 IntoArea(Vector3 pos, float dx) //dx = radius
+    public float minX() { return -sizeX / 2.0f; }
+    public float maxX() { return sizeX / 2.0f; }
+    public float minZ() { return -sizeZ / 2.0f; }
+    public float maxZ() { return sizeZ / 2.0f; }
+    
+    public Vector3 IntoArea(Vector3 pos, float dx)
     {
         Vector3 result = pos;
-        result.x = result.x - dx < minX ? minX + dx : result.x;
-        result.x = result.x + dx > maxX ? maxX - dx : result.x;
+        result.x = result.x - dx < minX() ? minX() + dx : result.x;
+        result.x = result.x + dx > maxX() ? maxX() - dx : result.x;
         return result;
+    }
+    
+    public bool escapedBelow(Vector3 pos, float dz)
+    {
+        return pos.z + dz < minZ();
     }
 
     // Start is called before the first frame update

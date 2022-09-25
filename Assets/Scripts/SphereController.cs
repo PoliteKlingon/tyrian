@@ -36,8 +36,22 @@ public class SphereController : MonoBehaviour
         // Check, if the 'D' key is pressed
         if (Input.GetKey(KeyCode.D))
         {
-            // if so, change position to the left
+            // if so, change position to the right
             pos.x += speed * Time.deltaTime; //toto je cas mezi dvema snimky
+        }
+        
+        // Check, if the 'W' key is pressed
+        if (Input.GetKey(KeyCode.W))
+        {
+            // if so, change position up
+            pos.z += speed * Time.deltaTime; //toto je cas mezi dvema snimky
+        }
+        
+        // Check, if the 'S' key is pressed
+        if (Input.GetKey(KeyCode.S))
+        {
+            // if so, change position down
+            pos.z -= speed * Time.deltaTime; //toto je cas mezi dvema snimky
         }
         
         pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius);

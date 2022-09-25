@@ -38,12 +38,19 @@ public class EnvironmentProps : MonoBehaviour
         Vector3 result = pos;
         result.x = result.x - dx < minX() ? minX() + dx : result.x;
         result.x = result.x + dx > maxX() ? maxX() - dx : result.x;
+		result.z = result.z - dx < minZ() ? minZ() + dx : result.z;
+		result.z = result.z + dx > maxZ() ? maxZ() - dx : result.z;
         return result;
     }
     
     public bool escapedBelow(Vector3 pos, float dz)
     {
-        return pos.z + dz < minZ();
+        return pos.z + 2 + dz < minZ();
+    }
+
+	public bool escapedAbove(Vector3 pos, float dz)
+    {
+        return pos.z - 2 - dz > maxZ();
     }
 
     // Start is called before the first frame update

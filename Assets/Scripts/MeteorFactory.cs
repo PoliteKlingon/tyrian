@@ -41,19 +41,23 @@ public class MeteorFactory : MonoBehaviour
 //vertical
         float z = EnvironmentProps.Instance.maxZ() + _meteorRadius;
 // create new instance of prefab at given position
-        Instantiate(meteorPrefab, new Vector3(x, 0, z), Quaternion.identity);
-//LATER - set speed and size of meteor
+        //Instantiate(meteorPrefab, new Vector3(x, 0, z), Quaternion.identity);
+		
+//LATER - set speed and size of meteor:
+		var meteorSpeed = _meteorSpeed * Random.Range(0.25f, 1.0f);
+		var meteorRadius = _meteorRadius * Random.Range(0.5f, 2.0f);
+
 // set new delay for next spawn
         _delay = Random.Range(delayMin, delayMax);
 
         // create new instance of prefab at given position
-        var meteorGO = Instantiate(meteorPrefab, new Vector3(x, 0, z),
+        var meteorGO = Instantiate(meteorPrefab, new Vector3(x, 0, z + 2),
             Quaternion.identity);
         Debug.Log("New meteor spawned at: " + meteorGO.transform.position);
         var meteorContr = meteorGO.GetComponent<MeteorController>();
         if (meteorContr != null)
         {
-            meteorContr.Set(_meteorSpeed, _meteorRadius);
+            meteorContr.Set(meteorSpeed, meteorRadius);
         }
         else
         {

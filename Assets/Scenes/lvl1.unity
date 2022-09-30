@@ -1215,3 +1215,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818088283}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2998732327572525193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.1484995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621288, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998732326981621289, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}
+      propertyPath: m_Name
+      value: Game Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e478c98f0cefbd42afbe395e4ce1a2c, type: 3}

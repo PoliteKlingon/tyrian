@@ -51,7 +51,7 @@ public class MainGun : MonoBehaviour
         // create new instance of prefab at given position
         var projectileGO = Instantiate(projectilePrefab, new Vector3(x, 0, z),
             Quaternion.identity);
-        Debug.Log("New projectile shot at: " + projectileGO.transform.position);
+        //Debug.Log("New projectile shot at: " + projectileGO.transform.position);
         var projectileContr = projectileGO.GetComponent<ProjectileController>();
         if (projectileContr != null)
         {

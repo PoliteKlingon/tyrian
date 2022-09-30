@@ -53,7 +53,7 @@ public class MeteorFactory : MonoBehaviour
         // create new instance of prefab at given position
         var meteorGO = Instantiate(meteorPrefab, new Vector3(x, 0, z + 2),
             Quaternion.identity);
-        Debug.Log("New meteor spawned at: " + meteorGO.transform.position);
+        //Debug.Log("New meteor spawned at: " + meteorGO.transform.position);
         var meteorContr = meteorGO.GetComponent<MeteorController>();
         if (meteorContr != null)
         {

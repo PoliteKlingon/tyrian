@@ -17,7 +17,15 @@ public class LevelsManager : MonoBehaviour
         // switch levels if N is pressed (released actually)
         if (Input.GetKeyUp(KeyCode.N))
         {
-            SceneManager.LoadScene("lvl2");
+            int active = SceneManager.GetActiveScene().buildIndex;
+            if (active + 1 >= SceneManager.sceneCountInBuildSettings)
+            {
+                Debug.LogWarning("No more levels");
+            }
+            else
+            {
+                SceneManager.LoadScene("lvl" + (active + 1).ToString());                
+            }
         }
     }
 }

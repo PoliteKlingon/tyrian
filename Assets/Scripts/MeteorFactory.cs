@@ -15,6 +15,8 @@ public class MeteorFactory : MonoBehaviour
     private float _meteorRadius;
     [SerializeField]
     private float _meteorSpeed;
+    [SerializeField]
+    private bool randomize;
 // delay from last spawn
     private float _delay;
     
@@ -44,8 +46,9 @@ public class MeteorFactory : MonoBehaviour
         //Instantiate(meteorPrefab, new Vector3(x, 0, z), Quaternion.identity);
 		
 //LATER - set speed and size of meteor:
-		var meteorSpeed = _meteorSpeed * Random.Range(0.25f, 1.0f);
-		var meteorRadius = _meteorRadius * Random.Range(0.5f, 2.0f);
+        var randomness = Random.Range(0.5f, 1.5f);
+		var meteorSpeed = randomize ? _meteorSpeed / randomness : _meteorSpeed;
+		var meteorRadius = randomize ? _meteorRadius * randomness : _meteorRadius;
 
 // set new delay for next spawn
         _delay = Random.Range(delayMin, delayMax);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MainGun : MonoBehaviour
 {
@@ -34,32 +35,36 @@ public class MainGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // time elapsed from previous frame
-        _delay -= Time.deltaTime;
-        if (_delay > 0.0f)
-            return;
-//choose position for new spawn
-//horizontal
-//null check
-        float x = this.gameObject.transform.position.x;
-//vertical
-        float z = this.gameObject.transform.position.z + collider.radius;
-
-// set new delay for next spawn
-        _delay = delay;
-
-        // create new instance of prefab at given position
-        var projectileGO = Instantiate(projectilePrefab, new Vector3(x, 0, z),
-            Quaternion.identity);
-        //Debug.Log("New projectile shot at: " + projectileGO.transform.position);
-        var projectileContr = projectileGO.GetComponent<ProjectileController>();
-        if (projectileContr != null)
+        if (Input.GetKey(KeyCode.Space))
         {
-            projectileContr.Set(_projectileSpeed, _projectileRadius);
-        }
-        else
-        {
-            Debug.LogError("Missing ProjectileController component");
+
+            // time elapsed from previous frame
+            _delay -= Time.deltaTime;
+            if (_delay > 0.0f)
+                return;
+            //choose position for new spawn
+            //horizontal
+            //null check
+            float x = this.gameObject.transform.position.x;
+            //vertical
+            float z = this.gameObject.transform.position.z + collider.radius;
+
+            // set new delay for next spawn
+            _delay = delay;
+
+            // create new instance of prefab at given position
+            var projectileGO = Instantiate(projectilePrefab, new Vector3(x, 0, z),
+                Quaternion.identity);
+            //Debug.Log("New projectile shot at: " + projectileGO.transform.position);
+            var projectileContr = projectileGO.GetComponent<ProjectileController>();
+            if (projectileContr != null)
+            {
+                projectileContr.Set(_projectileSpeed, _projectileRadius);
+            }
+            else
+            {
+                Debug.LogError("Missing ProjectileController component");
+            }
         }
     }
 }

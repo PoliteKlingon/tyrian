@@ -394,8 +394,9 @@ MonoBehaviour:
   meteorPrefab: {fileID: 425970546502634278, guid: 4b57aff485c2b4a51942a0e2ce8f8a63, type: 3}
   delayMin: 0.1
   delayMax: 0.5
-  _meteorRadius: 2
-  _meteorSpeed: 10
+  _meteorRadius: 1
+  _meteorSpeed: 20
+  randomize: 0
 --- !u!4 &1051371962
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaa3be382e55f3b6951303d2a2af9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeX: 20
+  sizeX: 10
   sizeZ: 20
 --- !u!1 &1671226091
 GameObject:

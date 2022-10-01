@@ -14,6 +14,10 @@ public class LevelsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Game Manager")
+        {
+            SceneManager.LoadScene("lvl1");
+        }
         // switch levels if N is pressed (released actually)
         if (Input.GetKeyUp(KeyCode.N))
         {

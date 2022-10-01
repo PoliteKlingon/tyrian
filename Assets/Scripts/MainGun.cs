@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,10 @@ public class MainGun : MonoBehaviour
     void Awake()
     {
         collider = GetComponent<CapsuleCollider>();
-        //here should be some null check...
+        if (collider == null)
+        {
+            throw new Exception("No collider found!");
+        }
     }
 
     // Start is called before the first frame update
@@ -44,7 +48,6 @@ public class MainGun : MonoBehaviour
                 return;
             //choose position for new spawn
             //horizontal
-            //null check
             float x = this.gameObject.transform.position.x;
             //vertical
             float z = this.gameObject.transform.position.z + collider.height / 2 + collider.center.z;

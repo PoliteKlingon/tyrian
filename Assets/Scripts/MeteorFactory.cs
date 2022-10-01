@@ -42,10 +42,8 @@ public class MeteorFactory : MonoBehaviour
         );
 //vertical
         float z = EnvironmentProps.Instance.maxZ() + _meteorRadius;
-// create new instance of prefab at given position
-        //Instantiate(meteorPrefab, new Vector3(x, 0, z), Quaternion.identity);
 		
-//LATER - set speed and size of meteor:
+//set speed and size of meteor:
         var randomness = Random.Range(0.5f, 1.5f);
 		var meteorSpeed = randomize ? _meteorSpeed / randomness : _meteorSpeed;
 		var meteorRadius = randomize ? _meteorRadius * randomness : _meteorRadius;

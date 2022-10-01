@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,10 @@ public class SphereController : MonoBehaviour
     void Awake()
     {
         collider = GetComponent<CapsuleCollider>();
-        //here should be some null check...
+        if (collider == null)
+        {
+            throw new Exception("No collider found!");
+        }
     }
 
     // Start is called before the first frame update
@@ -33,25 +37,19 @@ public class SphereController : MonoBehaviour
             pos.x -= speed * Time.deltaTime;
         }
 
-        // Check, if the 'D' key is pressed
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            // if so, change position to the right
-            pos.x += speed * Time.deltaTime; //toto je cas mezi dvema snimky
+            pos.x += speed * Time.deltaTime; 
         }
         
-        // Check, if the 'W' key is pressed
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            // if so, change position up
-            pos.z += speed * Time.deltaTime; //toto je cas mezi dvema snimky
+            pos.z += speed * Time.deltaTime;
         }
         
-        // Check, if the 'S' key is pressed
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            // if so, change position down
-            pos.z -= speed * Time.deltaTime; //toto je cas mezi dvema snimky
+            pos.z -= speed * Time.deltaTime;
         }
         
         pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius, collider.height);

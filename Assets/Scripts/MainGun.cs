@@ -9,12 +9,12 @@ public class MainGun : MonoBehaviour
     [SerializeField]
     private GameObject projectilePrefab;
     [SerializeField]
-    private float delay;
+    private float delay = 0.25f;
     
     [SerializeField]
-    private float _projectileRadius;
+    private float _projectileRadius = 0.25f;
     [SerializeField]
-    private float _projectileSpeed;
+    private float _projectileSpeed = 20.0f;
     
     private float _delay;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SphereController : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 5;
 
     private SphereCollider collider;
 
@@ -27,28 +27,28 @@ public class SphereController : MonoBehaviour
         Vector3 pos = transform.position;
 
         // Check, if the 'A' key is pressed
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             // if so, change position to the left
             pos.x -= speed * Time.deltaTime;
         }
 
         // Check, if the 'D' key is pressed
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             // if so, change position to the right
             pos.x += speed * Time.deltaTime; //toto je cas mezi dvema snimky
         }
         
         // Check, if the 'W' key is pressed
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             // if so, change position up
             pos.z += speed * Time.deltaTime; //toto je cas mezi dvema snimky
         }
         
         // Check, if the 'S' key is pressed
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             // if so, change position down
             pos.z -= speed * Time.deltaTime; //toto je cas mezi dvema snimky

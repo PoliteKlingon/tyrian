@@ -6,11 +6,11 @@ public class SphereController : MonoBehaviour
 {
     public float speed = 5;
 
-    private SphereCollider collider;
+    private CapsuleCollider collider;
 
     void Awake()
     {
-        collider = GetComponent<SphereCollider>();
+        collider = GetComponent<CapsuleCollider>();
         //here should be some null check...
     }
 
@@ -54,7 +54,7 @@ public class SphereController : MonoBehaviour
             pos.z -= speed * Time.deltaTime; //toto je cas mezi dvema snimky
         }
         
-        pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius);
+        pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius, collider.height);
 
         //set position of gameOjbect to calculated pos
         transform.position = pos;

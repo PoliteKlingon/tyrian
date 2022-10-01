@@ -18,11 +18,11 @@ public class MainGun : MonoBehaviour
     
     private float _delay;
 
-	private SphereCollider collider;
+	private CapsuleCollider collider;
 
     void Awake()
     {
-        collider = GetComponent<SphereCollider>();
+        collider = GetComponent<CapsuleCollider>();
         //here should be some null check...
     }
 
@@ -47,7 +47,7 @@ public class MainGun : MonoBehaviour
             //null check
             float x = this.gameObject.transform.position.x;
             //vertical
-            float z = this.gameObject.transform.position.z + collider.radius;
+            float z = this.gameObject.transform.position.z + collider.height / 2 + collider.center.z;
 
             // set new delay for next spawn
             _delay = delay;

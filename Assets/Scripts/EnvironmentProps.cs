@@ -33,13 +33,13 @@ public class EnvironmentProps : MonoBehaviour
     public float minZ() { return -sizeZ / 2.0f; }
     public float maxZ() { return sizeZ / 2.0f; }
     
-    public Vector3 IntoArea(Vector3 pos, float dx)
+    public Vector3 IntoArea(Vector3 pos, float dx, float dz)
     {
         Vector3 result = pos;
         result.x = result.x - dx < minX() ? minX() + dx : result.x;
         result.x = result.x + dx > maxX() ? maxX() - dx : result.x;
-		result.z = result.z - dx < minZ() ? minZ() + dx : result.z;
-		result.z = result.z + dx > maxZ() ? maxZ() - dx : result.z;
+		result.z = result.z - dz < minZ() ? minZ() + dz : result.z;
+		result.z = result.z + dz > maxZ() ? maxZ() - dz : result.z;
         return result;
     }
     

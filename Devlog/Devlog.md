@@ -18,3 +18,8 @@ Fixed the ship's collider to be a capsule
 In the seminar started the Geometry Wars scene - geometry gun created, shooting random prefabs.
 
 Time beyond seminar - ~2h
+
+## Week 04
+Seminar: completed second milestone - geometry wars. Learned about collisions, triggers, layers...
+After seminar: completed the last few steps from seminar, implemented some extra points (projectiles rotation with non-rotating healthbar, healthbar tweaks) ~1h
+

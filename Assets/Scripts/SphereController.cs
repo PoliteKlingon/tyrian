@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SphereController : MonoBehaviour
@@ -8,6 +9,11 @@ public class SphereController : MonoBehaviour
     public float speed = 5;
 
     private CapsuleCollider collider;
+    
+    [SerializeField]
+    public Health health;
+    [SerializeField]
+    private float collisionDamage = 40.0f;
 
     void Awake()
     {
@@ -16,12 +22,6 @@ public class SphereController : MonoBehaviour
         {
             throw new Exception("No collider found!");
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -56,5 +56,17 @@ public class SphereController : MonoBehaviour
 
         //set position of gameOjbect to calculated pos
         transform.position = pos;
+    }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.other.gameObject.GetComponent<Health>().DealDamage(collisionDamage);
+    }
+
+    private void OnDestroy()
+    {
+        
+        Debug.Log("You died");
+        
     }
 }

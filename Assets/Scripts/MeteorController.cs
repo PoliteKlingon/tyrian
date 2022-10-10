@@ -7,6 +7,11 @@ public class MeteorController : MonoBehaviour
     private float _speed = 20.0f;
     private float _radius = 1.0f;
     
+    [SerializeField]
+    public Health health;
+    [SerializeField]
+    private float collisionDamage = 40.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +23,6 @@ public class MeteorController : MonoBehaviour
     {
         // move meteor down
         transform.position += new Vector3(0, 0, -_speed * Time.deltaTime);
-// destroy it on border
-        if (EnvironmentProps.Instance.escapedBelow(transform.position, _radius))
-        {
-            Destroy(this.gameObject);
-        }
     }
     
     public void Set(float speed, float radius)
@@ -30,5 +30,10 @@ public class MeteorController : MonoBehaviour
         _speed = speed;
         _radius = radius;
         transform.localScale = new Vector3(_radius, _radius, _radius);
+    }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.other.gameObject.GetComponent<Health>().DealDamage(collisionDamage);
     }
 }

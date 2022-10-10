@@ -22,4 +22,6 @@ Time beyond seminar - ~2h
 ## Week 04
 Seminar: completed second milestone - geometry wars. Learned about collisions, triggers, layers...
 After seminar: completed the last few steps from seminar, implemented some extra points (projectiles rotation with non-rotating healthbar, healthbar tweaks) ~1h
+GDD - made the first iteration of the GDD for our group project - ~2h
 
+Time beyond seminar - ~3h

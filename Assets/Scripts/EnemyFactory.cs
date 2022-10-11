@@ -1,9 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
@@ -35,10 +29,11 @@ public class EnemyFactory : MonoBehaviour
     [SerializeField]
     private float spawnDelay;
     [SerializeField]
-    private float _shootDelayMin;
+    private float shootDelayMin;
     [SerializeField]
-    private float _shootDelayMax;
-    
+    private float shootDelayMax;
+    [SerializeField]
+    private float vesselSpeed = 5.0f;
     [SerializeField]
     private int vesselNumMax = 10;
     
@@ -68,7 +63,7 @@ public class EnemyFactory : MonoBehaviour
         float z = EnvironmentProps.Instance.maxZ();
 		
 //set speed and size of meteor:
-        var shootDelay = Random.Range(_shootDelayMin, _shootDelayMax);
+        var shootDelay = Random.Range(shootDelayMin, shootDelayMax);
 
 // set new delay for next spawn
         _delay = spawnDelay;
@@ -87,6 +82,15 @@ public class EnemyFactory : MonoBehaviour
         if (enemyGun != null)
         {
             enemyGun.Set(shootDelay);
+        }
+        else
+        {
+            Debug.LogError("Missing EnemyGun component");
+        }
+        var enemyContr = enemyGO.GetComponent<EnemyController>();
+        if (enemyContr != null)
+        {
+            enemyContr.SetSpeed(vesselSpeed);
         }
         else
         {

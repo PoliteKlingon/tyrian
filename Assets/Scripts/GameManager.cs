@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -29,11 +27,5 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this); //persistent
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -154,9 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8302553780044930017, guid: c7f1a813c97d7c6adb3212973ac09c6c, type: 3}
   spawnDelay: 0.8
-  _shootDelayMin: 3
-  _shootDelayMax: 5
-  vesselNumMax: 10
+  shootDelayMin: 2
+  shootDelayMax: 4
+  vesselSpeed: 8
+  vesselNumMax: 15
 --- !u!4 &5614321
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,7 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   health: {fileID: 1734196837}
-  collisionDamage: 40
+  collisionDamage: 100
 --- !u!135 &1734196842
 SphereCollider:
   m_ObjectHideFlags: 0

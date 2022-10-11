@@ -810,7 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   health: {fileID: 897451700}
-  collisionDamage: 40
+  collisionDamage: 100
 --- !u!135 &897451695
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -979,7 +979,7 @@ MonoBehaviour:
   delayMax: 0.5
   _meteorRadius: 1.5
   _meteorSpeed: 10
-  randomize: 0
+  randomize: 1
 --- !u!4 &1051371962
 Transform:
   m_ObjectHideFlags: 0

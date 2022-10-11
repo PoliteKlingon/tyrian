@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeteorController : MonoBehaviour
@@ -34,6 +32,6 @@ public class MeteorController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>().DealDamage(collisionDamage);
+        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 }

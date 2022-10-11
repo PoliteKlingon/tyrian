@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SphereController : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 5.0f;
 
     private CapsuleCollider collider;
     
@@ -54,13 +51,13 @@ public class SphereController : MonoBehaviour
         
         pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius, collider.height);
 
-        //set position of gameOjbect to calculated pos
+        //set position of gameObject to calculated pos
         transform.position = pos;
     }
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>().DealDamage(collisionDamage);
+        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 
     private void OnDestroy()

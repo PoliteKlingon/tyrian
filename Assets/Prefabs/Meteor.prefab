@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0624d55ea763b45bda09807536a8816d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 70
   healthBar: {fileID: 439283015645259075}
+  reviveOnDestroy: 0
 --- !u!1001 &109011435734242416
 PrefabInstance:
   m_ObjectHideFlags: 0

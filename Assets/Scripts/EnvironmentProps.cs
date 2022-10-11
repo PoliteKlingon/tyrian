@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnvironmentProps : MonoBehaviour
@@ -41,27 +39,5 @@ public class EnvironmentProps : MonoBehaviour
 		result.z = result.z - dz < minZ() ? minZ() + dz : result.z;
 		result.z = result.z + dz > maxZ() ? maxZ() - dz : result.z;
         return result;
-    }
-    
-    public bool escapedBelow(Vector3 pos, float dz)
-    {
-        return pos.z + 2 + dz < minZ();
-    }
-
-	public bool escapedAbove(Vector3 pos, float dz)
-    {
-        return pos.z - 2 - dz > maxZ();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

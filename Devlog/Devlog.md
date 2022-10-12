@@ -25,3 +25,6 @@ After seminar: completed the last few steps from seminar, implemented some extra
 GDD - made the first iteration of the GDD for our group project - ~2h
 
 Time beyond seminar - ~3h
+
+## Week 05
+HW: completed second homework - enemies, health, collisions. The hardest thing was probably figuring out an elegant way to implement the enemy movement pattern. ~4h

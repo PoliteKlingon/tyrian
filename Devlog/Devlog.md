@@ -23,8 +23,9 @@ Time beyond seminar - ~2h
 Seminar: completed second milestone - geometry wars. Learned about collisions, triggers, layers...
 After seminar: completed the last few steps from seminar, implemented some extra points (projectiles rotation with non-rotating healthbar, healthbar tweaks) ~1h
 GDD - made the first iteration of the GDD for our group project - ~2h
+No homework posted this week, therefore no update to Tyrian -> no screenshot
 
 Time beyond seminar - ~3h
 
 ## Week 05
-HW: completed second homework - enemies, health, collisions. The hardest thing was probably figuring out an elegant way to implement the enemy movement pattern. ~4h
+HW: completed second homework - enemies, health, collisions. The hardest thing was probably figuring out an elegant way to implement the enemy movement pattern. ~4.5h

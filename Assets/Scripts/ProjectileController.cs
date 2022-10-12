@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
@@ -7,22 +5,17 @@ public class ProjectileController : MonoBehaviour
     private float _speed = 25.0f;
     private float _radius = 0.25f;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField]
+    public Health health;
+    [SerializeField]
+    private float collisionDamage = 40.0f;
+    
     // Update is called once per frame
     void Update()
     {
-        // move projectile up
-        transform.position += new Vector3(0, 0, _speed * Time.deltaTime);
-// destroy it on border
-        if (EnvironmentProps.Instance.escapedAbove(transform.position, _radius))
-        {
-            Destroy(this.gameObject);
-        }
+        // move projectile forward
+        //transform.position += new Vector3(0, 0, _speed * Time.deltaTime);
+        transform.localPosition += transform.forward * _speed * Time.deltaTime;
     }
     
     public void Set(float speed, float radius)
@@ -31,4 +24,10 @@ public class ProjectileController : MonoBehaviour
         _radius = radius;
         transform.localScale = new Vector3(_radius, _radius, _radius);
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
+    }
+
 }

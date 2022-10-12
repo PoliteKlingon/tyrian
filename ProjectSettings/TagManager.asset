@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player Ship
+  - Player Projectile
+  - Enemy Ship
+  - Enemy Projectile
+  - Meteor
+  - GameArea
   - 
   - 
   - 

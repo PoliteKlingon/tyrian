@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
     private HealthBar healthBar;
     [SerializeField]
     private bool reviveOnDestroy = false;
+    [SerializeField]
+    private GameObject deathAnimation;
+    [SerializeField]
+    private GameObject hitAnimation;
     
     private float _currentHealth;
     private float CurrentHealth
@@ -19,6 +23,11 @@ public class Health : MonoBehaviour
             healthBar.SetFillLevel(_currentHealth / maxHealth);
             if(_currentHealth <= 0) // to suppress the float errors  
             {
+                if (deathAnimation != null)
+                {
+                    var deathAnim = Instantiate(deathAnimation, transform.position, transform.rotation);
+                    Destroy(deathAnim, 2f);
+                }
                 if (reviveOnDestroy)
                 {
                     _currentHealth = maxHealth;
@@ -39,6 +48,11 @@ public class Health : MonoBehaviour
     }
     public void DealDamage(float damage)
     {
+        if (hitAnimation != null)
+        {
+            var hitAnim = Instantiate(hitAnimation, transform.position, transform.rotation);
+            Destroy(hitAnim, 2f);
+        }
         CurrentHealth -= damage;
     }
     /*public void Heal(float heal)

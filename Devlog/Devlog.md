@@ -28,4 +28,15 @@ No homework posted this week, therefore no update to Tyrian -> no screenshot
 Time beyond seminar - ~3h
 
 ## Week 05
+Seminar: learned to import models and textures into Unity, also learned about coroutines
 HW: completed second homework - enemies, health, collisions. The hardest thing was probably figuring out an elegant way to implement the enemy movement pattern. ~4.5h
+GDD: wrote feedback for my colleagues. ~1.5h
+
+Time beyond seminar - ~6h
+
+## Week 06
+Seminar: learned about particle effects + introduction to UI in Unity
+HW: completed third homework - made the game look nicer, made my models + a pair of textures, added particle effects. ~7h
+GDD: made the second updated version of my GDD, added a lot more details, thought hard about better controls. ~1.5h
+
+Time beyond seminar - ~ 8.5h

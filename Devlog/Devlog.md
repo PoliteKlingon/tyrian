@@ -39,4 +39,11 @@ Seminar: learned about particle effects + introduction to UI in Unity
 HW: completed third homework - made the game look nicer, made my models + a pair of textures, added particle effects. ~7h
 GDD: made the second updated version of my GDD, added a lot more details, thought hard about better controls. ~1.5h
 
-Time beyond seminar - ~ 8.5h
+Time beyond seminar - ~8.5h
+
+## Week 07
+Seminar - no seminar this week
+HW: added ship thrusters (~0.75h)
+GDD: waiting for teachers' review
+
+Time beyond seminar - ~0.75h

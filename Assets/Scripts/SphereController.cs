@@ -11,7 +11,16 @@ public class SphereController : MonoBehaviour
     public Health health;
     [SerializeField]
     private float collisionDamage = 40.0f;
-
+    
+    [SerializeField]
+    private GameObject[] leftThrusters;
+    [SerializeField]
+    private GameObject[] rightThrusters;
+    [SerializeField]
+    private GameObject[] frontThrusters;
+    [SerializeField]
+    private GameObject[] backThrusters;
+    
     void Awake()
     {
         collider = GetComponent<CapsuleCollider>();
@@ -21,9 +30,30 @@ public class SphereController : MonoBehaviour
         }
     }
 
+    private void SetThrusters(GameObject[] thrusters, bool value)
+    {
+        foreach (GameObject thruster in thrusters)
+        {
+            thruster.SetActive(value);
+        }
+    }
+    
+    private void Start()
+    {
+        SetThrusters(frontThrusters, false);
+        SetThrusters(backThrusters, false);
+        SetThrusters(leftThrusters, false);
+        SetThrusters(rightThrusters, false);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        SetThrusters(frontThrusters, false);
+        SetThrusters(backThrusters, false);
+        SetThrusters(leftThrusters, false);
+        SetThrusters(rightThrusters, false);
+        
         // Save the current position of the gameObject
         Vector3 pos = transform.position;
 
@@ -32,21 +62,26 @@ public class SphereController : MonoBehaviour
         {
             // if so, change position to the left
             pos.x -= speed * Time.deltaTime;
+            SetThrusters(rightThrusters, true);
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             pos.x += speed * Time.deltaTime; 
+            
+            SetThrusters(leftThrusters, true);
         }
         
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             pos.z += speed * Time.deltaTime;
+            SetThrusters(backThrusters, true);
         }
         
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             pos.z -= speed * Time.deltaTime;
+            SetThrusters(frontThrusters, true);
         }
         
         pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius, collider.height);

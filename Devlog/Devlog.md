@@ -47,3 +47,10 @@ HW: added ship thrusters (~0.75h)
 GDD: waiting for teachers' review
 
 Time beyond seminar - ~0.75h
+
+## Week 08
+Seminar - UI managing, Sounds, beginning of AI
+HW: started doing simple UI menus, pause game functionality - ~3h
+GDD: still waiting for feedback
+
+Time beyond seminar - ~3h

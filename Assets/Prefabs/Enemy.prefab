@@ -555,7 +555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 3917309989379918834}
-  reviveOnDestroy: 0
+  isPlayerShip: 0
+  killPoints: 100
   deathAnimation: {fileID: 8529730313433857519, guid: 1c9cf6572887583ef8355238091c3290, type: 3}
   hitAnimation: {fileID: 8529730313433857519, guid: d86b1b94548d19e33bb003f6ef915119, type: 3}
 --- !u!1001 &3586827312094821057

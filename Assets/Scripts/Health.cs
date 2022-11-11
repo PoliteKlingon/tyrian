@@ -4,10 +4,11 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private float maxHealth = 100.0f;
+    public HealthBar healthBar;
     [SerializeField]
-    private HealthBar healthBar;
+    private bool isPlayerShip = false;
     [SerializeField]
-    private bool reviveOnDestroy = false;
+    private float killPoints = 0;
     [SerializeField]
     private GameObject deathAnimation;
     [SerializeField]
@@ -20,7 +21,7 @@ public class Health : MonoBehaviour
         set
         {
             _currentHealth = value;
-            healthBar.SetFillLevel(_currentHealth / maxHealth);
+            if (healthBar is not null) healthBar.SetFillLevel(_currentHealth / maxHealth);
             if(_currentHealth <= 0) // to suppress the float errors  
             {
                 if (deathAnimation != null)
@@ -28,15 +29,14 @@ public class Health : MonoBehaviour
                     var deathAnim = Instantiate(deathAnimation, transform.position, transform.rotation);
                     Destroy(deathAnim, 2f);
                 }
-                if (reviveOnDestroy)
+                Destroy(gameObject);
+                ScoreManager.Instance.AddScore(killPoints);
+                
+                if (isPlayerShip)
                 {
-                    _currentHealth = maxHealth;
-                    healthBar.SetFillLevel(_currentHealth / maxHealth);
-                    Debug.Log("You died!");
-                }
-                else
-                {
-                    Destroy(gameObject);
+                    if (healthBar is not null) healthBar.SetFillLevel(100);
+                    UIManager.Show<DeathMenuView>();
+                    UIManager.GetView<DeathMenuView>().ShowScore();
                 }
             }
         }

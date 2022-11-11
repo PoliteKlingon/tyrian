@@ -49,6 +49,8 @@ public class SphereController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Health>().healthBar = UIManager.GetView<HUDView>().GetComponentInChildren<HealthBar>();
+        
         SetThrusters(frontThrusters, false);
         SetThrusters(backThrusters, false);
         SetThrusters(leftThrusters, false);
@@ -93,12 +95,5 @@ public class SphereController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
-    }
-
-    private void OnDestroy()
-    {
-        
-        Debug.Log("You died");
-        
     }
 }

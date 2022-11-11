@@ -53,12 +53,15 @@ public class UIManager : MonoBehaviour
         return null;
     }
 
-    public static void Show<T>(object args = null, bool remember = true) where T : AView
+    public static void Show<T>(object args = null, bool remember = true, bool hideCurrent = true) where T : AView
     {
         if (Instance._currentView != null)
         {
             Instance._history.Push(Instance._currentView);
-            Instance._currentView.DoHide();
+            if (hideCurrent)
+            {
+                Instance._currentView.DoHide();
+            }
         }
 
         var view = GetView<T>();

@@ -25,6 +25,8 @@ public class PauseMenuView : AView
         {
             PauseManager.ResumeGame();
             DoHide();
+            ScoreManager.Instance.ResetScore();
+            UIManager.GetView<HUDView>().DoHide();
             SceneManager.LoadScene("Game Manager");
             UIManager.Show<MainMenuView>();
         });

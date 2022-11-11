@@ -30,24 +30,27 @@ public class PauseManager : MonoBehaviour
     {
         _paused = true;
         Time.timeScale = 0;
-        UIManager.Show<PauseMenuView>();
+        
+        UIManager.Show<PauseMenuView>(hideCurrent:false);
     }
 
     public static void ResumeGame()
     {
         _paused = false;
         Time.timeScale = 1;
-        UIManager.HideCurrent();
+        UIManager.ShowLast();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "Game Manager" && Input.GetKeyUp(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name != "Game Manager" 
+            && Input.GetKeyUp(KeyCode.Escape) 
+            && !ReferenceEquals(UIManager.GetCurrentViewType(), typeof(DeathMenuView)))
         {
             if (_paused)
             {
-                if (ReferenceEquals(UIManager.GetCurrentViewType(),typeof(PauseMenuView)))
+                if (ReferenceEquals(UIManager.GetCurrentViewType(), typeof(PauseMenuView)))
                 {
                     ResumeGame();
                 }

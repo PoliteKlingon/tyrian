@@ -21,7 +21,8 @@ public class LevelsManager : MonoBehaviour
                 Debug.LogWarning("No more levels");
             }
             else
-            {
+            {   
+                ScoreManager.Instance.ResetScore();
                 SceneManager.LoadScene("lvl" + (active + 1).ToString());                
             }
         }

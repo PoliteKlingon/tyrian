@@ -54,3 +54,10 @@ HW: started doing simple UI menus, pause game functionality - ~3h
 GDD: still waiting for feedback
 
 Time beyond seminar - ~3h
+
+## Week 09
+Seminar - Completed AI + GDD talk
+HW: Done hw04 (The worst part was making the health bar of the player's ship to be the UI element, very painful)- ~4h
+GDD: choosing the game + cutting down on features - ~ 1h
+
+Time beyond seminar - ~5h

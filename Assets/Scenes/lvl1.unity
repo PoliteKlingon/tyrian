@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381c1c7fad1f9aa77b77ed39beb2dd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meteorsToDestroy: 25
   meteorPrefab: {fileID: 425970546502634278, guid: 4b57aff485c2b4a51942a0e2ce8f8a63, type: 3}
   delayMin: 0.1
   delayMax: 0.5

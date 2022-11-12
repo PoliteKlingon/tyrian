@@ -147,6 +147,8 @@ MonoBehaviour:
   maxHealth: 70
   healthBar: {fileID: 439283015645259075}
   isPlayerShip: 0
+  isEnemyShip: 0
+  isMeteor: 1
   killPoints: 10
   deathAnimation: {fileID: 8529730313433857519, guid: 04301691cfa0d9d51b025f802cb38ae9, type: 3}
   hitAnimation: {fileID: 8529730313433857519, guid: d86b1b94548d19e33bb003f6ef915119, type: 3}

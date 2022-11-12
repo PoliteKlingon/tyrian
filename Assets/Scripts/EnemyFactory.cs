@@ -7,6 +7,8 @@ public class EnemyFactory : MonoBehaviour
 
     }
 
+    [SerializeField] private int enemiesToKill = 0;
+    private int _enemiesLeftToKill;
     void Awake()
     {
         // Check, if we do not have any instance yet.
@@ -46,12 +48,32 @@ public class EnemyFactory : MonoBehaviour
     void Start()
     {
         _delay = 0;
+        _enemiesLeftToKill = enemiesToKill;
+        Debug.Log("enemies to kill has been reset to " + _enemiesLeftToKill);
+    }
+
+    public void EnemyKilled()
+    {
+        _enemiesLeftToKill--;
+        Debug.Log("enemies left to kill: " + _enemiesLeftToKill);
+    }
+    
+    public void RestartEnemiesToKill()
+    {
+        _enemiesLeftToKill = enemiesToKill;
+        Debug.Log("enemies to kill has been reset to " + _enemiesLeftToKill);
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        if (_enemiesLeftToKill <= 0)
+        {
+            PauseManager.PauseGame(showPauseMenu:false);
+            UIManager.Show<WinMenuView>(remember:false);
+            UIManager.GetView<WinMenuView>().ShowScore();
+            return;
+        }
 // time elapsed from previous frame
         _delay -= Time.deltaTime;
         if (_delay > 0.0f) 

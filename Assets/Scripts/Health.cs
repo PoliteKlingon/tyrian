@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
     [SerializeField]
     private bool isPlayerShip = false;
     [SerializeField]
+    private bool isEnemyShip = false;
+    [SerializeField]
+    private bool isMeteor = false;
+    [SerializeField]
     private float killPoints = 0;
     [SerializeField]
     private GameObject deathAnimation;
@@ -37,6 +41,18 @@ public class Health : MonoBehaviour
                     if (healthBar is not null) healthBar.SetFillLevel(100);
                     UIManager.Show<DeathMenuView>();
                     UIManager.GetView<DeathMenuView>().ShowScore();
+                }
+
+                if (isEnemyShip)
+                {
+                    EnemyFactory.Instance.EnemyKilled();
+                    Debug.Log("enemy killed");
+                }
+
+                if (isMeteor)
+                {
+                    MeteorFactory.Instance.MeteorDestroyed();
+                    Debug.Log("meteor destroyed");
                 }
             }
         }

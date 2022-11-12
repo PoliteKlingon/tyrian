@@ -26,19 +26,19 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    public static void PauseGame()
+    public static void PauseGame(bool showPauseMenu=true)
     {
         _paused = true;
         Time.timeScale = 0;
         
-        UIManager.Show<PauseMenuView>(hideCurrent:false);
+        if (showPauseMenu) UIManager.Show<PauseMenuView>(hideCurrent:false);
     }
 
-    public static void ResumeGame()
+    public static void ResumeGame(bool hidePauseMenu=true)
     {
         _paused = false;
         Time.timeScale = 1;
-        UIManager.ShowLast();
+        if (hidePauseMenu) UIManager.ShowLast();
     }
 
     // Update is called once per frame

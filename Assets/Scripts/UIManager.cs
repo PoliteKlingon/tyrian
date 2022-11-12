@@ -57,11 +57,8 @@ public class UIManager : MonoBehaviour
     {
         if (Instance._currentView != null)
         {
-            Instance._history.Push(Instance._currentView);
-            if (hideCurrent)
-            {
-                Instance._currentView.DoHide();
-            }
+            if (remember) Instance._history.Push(Instance._currentView);
+            if (hideCurrent) Instance._currentView.DoHide();
         }
 
         var view = GetView<T>();
@@ -73,11 +70,7 @@ public class UIManager : MonoBehaviour
     {
         if (Instance._currentView != null)
         {
-            if (remember)
-            {
-                Instance._history.Push(Instance._currentView);
-            }
-            
+            if (remember) Instance._history.Push(Instance._currentView);
             Instance._currentView.DoHide();
         }
 
@@ -88,7 +81,14 @@ public class UIManager : MonoBehaviour
     public static void HideCurrent()
     {
         Instance._currentView.DoHide();
-        Instance._currentView = null;
+    }
+
+    public static void DeleteHistory()
+    {
+        while (Instance._history.Count > 0)
+        {
+            Instance._history.Pop();
+        }
     }
 
     public static System.Type GetCurrentViewType()

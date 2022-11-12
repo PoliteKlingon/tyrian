@@ -2,6 +2,29 @@ using UnityEngine;
 
 public class MeteorFactory : MonoBehaviour
 {
+    public static MeteorFactory Instance {
+        get; private set;
+
+    }
+
+    [SerializeField] private int meteorsToDestroy = 0;
+    private int _meteorsLeftToDestroy;
+    void Awake()
+    {
+        // Check, if we do not have any instance yet.
+        if (Instance == null)
+        {
+            // 'this' is the first instance created => save it.
+            Instance = this;
+            // Initialize references to other scripts.
+            //InitializeReferences();
+        } else if (Instance != this)
+        {
+            // Destroy 'this' object as there exist another instance
+            Destroy(this.gameObject);
+        }
+    }
+    
     // reference to prefab
     [SerializeField]
     private GameObject meteorPrefab;
@@ -22,12 +45,29 @@ public class MeteorFactory : MonoBehaviour
     void Start()
     {
         _delay = 0;
+        _meteorsLeftToDestroy = meteorsToDestroy;
+    }
+
+    public void MeteorDestroyed()
+    {
+        _meteorsLeftToDestroy--;
+    }
+
+    public void ResetMeteorsToDestroy()
+    {
+        _meteorsLeftToDestroy = meteorsToDestroy;
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        if (_meteorsLeftToDestroy <= 0)
+        {
+            PauseManager.PauseGame(showPauseMenu:false);
+            UIManager.Show<WinMenuView>(remember:false);
+            UIManager.GetView<WinMenuView>().ShowScore();
+            return;
+        }
 // time elapsed from previous frame
         _delay -= Time.deltaTime;
         if (_delay > 0.0f)

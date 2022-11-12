@@ -22,8 +22,11 @@ public class LevelsManager : MonoBehaviour
             }
             else
             {   
+                SceneManager.LoadScene("lvl" + (active + 1).ToString());
                 ScoreManager.Instance.ResetScore();
-                SceneManager.LoadScene("lvl" + (active + 1).ToString());                
+                PauseManager.ResumeGame();
+                //MeteorFactory.Instance.ResetMeteorsToDestroy();
+                //EnemyFactory.Instance.RestartEnemiesToKill();
             }
         }
     }

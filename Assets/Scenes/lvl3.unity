@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381c1c7fad1f9aa77b77ed39beb2dd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meteorsToDestroy: 200
   meteorPrefab: {fileID: 425970546502634278, guid: 4b57aff485c2b4a51942a0e2ce8f8a63, type: 3}
   delayMin: 0.1
   delayMax: 0.5
@@ -783,6 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7dea7c9ce9ec991aafc70d5221329a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesToKill: 12
   enemyPrefab: {fileID: 8302553780044930017, guid: c7f1a813c97d7c6adb3212973ac09c6c, type: 3}
   spawnDelay: 0.8
   shootDelayMin: 3

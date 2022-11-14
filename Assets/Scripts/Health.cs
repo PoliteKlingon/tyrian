@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     private bool isEnemyShip = false;
     [SerializeField]
+    private bool isEnemyBossShip = false;
+    [SerializeField]
     private bool isMeteor = false;
     [SerializeField]
     private float killPoints = 0;
@@ -39,20 +41,40 @@ public class Health : MonoBehaviour
                 if (isPlayerShip)
                 {
                     if (healthBar is not null) healthBar.SetFillLevel(100);
-                    UIManager.Show<DeathMenuView>();
+                    UIManager.Show<DeathMenuView>(remember:false);
                     UIManager.GetView<DeathMenuView>().ShowScore();
                 }
 
                 if (isEnemyShip)
                 {
-                    EnemyFactory.Instance.EnemyKilled();
+                    if (EnemyFactory.Instance is not null) EnemyFactory.Instance.EnemyKilled();
+                    if (BossFightFactory.Instance is not null) BossFightFactory.Instance.EnemyKilled();
                     Debug.Log("enemy killed");
+                    if (EnemyFactory.Instance is not null && EnemyFactory.Instance.AllEnemiesKilled())
+                    {
+                        PauseManager.PauseGame(showPauseMenu:false);
+                        UIManager.Show<WinMenuView>(remember:false);
+                        UIManager.GetView<WinMenuView>().ShowScore();
+                    }
                 }
 
                 if (isMeteor)
                 {
                     MeteorFactory.Instance.MeteorDestroyed();
                     Debug.Log("meteor destroyed");
+                    if (MeteorFactory.Instance is not null && MeteorFactory.Instance.ALlMeteorsDestroyed())
+                    {
+                        PauseManager.PauseGame(showPauseMenu:false);
+                        UIManager.Show<WinMenuView>(remember:false);
+                        UIManager.GetView<WinMenuView>().ShowScore();
+                    }
+                }
+
+                if (isEnemyBossShip)
+                {
+                    PauseManager.PauseGame(showPauseMenu:false);
+                    UIManager.Show<WinMenuView>(remember:false);
+                    UIManager.GetView<WinMenuView>().ShowScore();
                 }
             }
         }

@@ -57,7 +57,8 @@ Time beyond seminar - ~3h
 
 ## Week 09
 Seminar - Completed AI + GDD talk
-HW: Done hw04 (The worst part was making the health bar of the player's ship to be the UI element, very painful)- ~4h
+HW: Done hw04 - UI (The worst part was making the health bar of the player's ship to be the UI element, very painful)- ~4h
+    Started hw05 - finite levels, enemy bossship (win menu was very painful, the navigation did not work properly for hours and still does not work well enough) - ~4.5h
 GDD: choosing the game + cutting down on features - ~ 1h
 
-Time beyond seminar - ~5h
+Time beyond seminar - ~9.5h

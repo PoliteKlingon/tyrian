@@ -53,6 +53,11 @@ public class MeteorFactory : MonoBehaviour
         _meteorsLeftToDestroy--;
     }
 
+    public bool ALlMeteorsDestroyed()
+    {
+        return _meteorsLeftToDestroy == 0;
+    }
+
     public void ResetMeteorsToDestroy()
     {
         _meteorsLeftToDestroy = meteorsToDestroy;
@@ -61,13 +66,6 @@ public class MeteorFactory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_meteorsLeftToDestroy <= 0)
-        {
-            PauseManager.PauseGame(showPauseMenu:false);
-            UIManager.Show<WinMenuView>(remember:false);
-            UIManager.GetView<WinMenuView>().ShowScore();
-            return;
-        }
 // time elapsed from previous frame
         _delay -= Time.deltaTime;
         if (_delay > 0.0f)

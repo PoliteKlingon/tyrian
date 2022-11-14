@@ -7,6 +7,7 @@ public class LevelsMenuView : AView
     [SerializeField] private Button lvl1Button;
     [SerializeField] private Button lvl2Button;
     [SerializeField] private Button lvl3Button;
+    [SerializeField] private Button lvl4Button;
     [SerializeField] private Button backButton;
 
     //Why can't I use this?
@@ -52,6 +53,15 @@ public class LevelsMenuView : AView
         {
             DoHide();
             SceneManager.LoadScene("lvl3");
+            UIManager.Show<HUDView>();
+        
+            ScoreManager.Instance.ResetScore();
+        });
+        
+        lvl4Button.onClick.AddListener(() =>
+        {
+            DoHide();
+            SceneManager.LoadScene("lvl4");
             UIManager.Show<HUDView>();
         
             ScoreManager.Instance.ResetScore();

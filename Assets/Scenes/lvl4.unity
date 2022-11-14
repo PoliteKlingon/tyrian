@@ -123,57 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &5614319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5614321}
-  - component: {fileID: 5614320}
-  m_Layer: 0
-  m_Name: EnemyFactory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &5614320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5614319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7dea7c9ce9ec991aafc70d5221329a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesToKill: 15
-  enemyPrefab: {fileID: 8302553780044930017, guid: c7f1a813c97d7c6adb3212973ac09c6c, type: 3}
-  spawnDelay: 0.8
-  shootDelayMin: 2
-  shootDelayMax: 4
-  vesselSpeed: 8
-  vesselNumMax: 15
---- !u!4 &5614321
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5614319}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1875529, y: -25.31425, z: 17.987904}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &289865450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590585048148476795, guid: aa0ff478de8c77a98a288688ffd432f1, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8590585048148476795, guid: aa0ff478de8c77a98a288688ffd432f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,6 +321,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &604789442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604789444}
+  - component: {fileID: 604789443}
+  m_Layer: 0
+  m_Name: Bossfight Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &604789443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604789442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b23af5f517a7382b55fbac1bbb83fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesToKill: 1
+  enemyPrefab: {fileID: 8302553780044930017, guid: c7f1a813c97d7c6adb3212973ac09c6c, type: 3}
+  bossPrefab: {fileID: 1535129893567414624, guid: 533edfdd59bf4107d9b35a467a8f20a6, type: 3}
+  spawnDelay: 0.762
+  shootDelayMin: 1.3
+  shootDelayMax: 2.3
+  vesselSpeed: 4
+  vesselNumMax: 1
+--- !u!4 &604789444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604789442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1279185, y: 1.668556, z: -0.15503073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &679689183
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5627045349185156845, guid: b62ec4280c19d43fbb694153e2b18c1a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5627045349185156845, guid: b62ec4280c19d43fbb694153e2b18c1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -559,7 +560,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1206857295000340147, guid: 087d4d53155743c56b8453f0455759df, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1206857295000340147, guid: 087d4d53155743c56b8453f0455759df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -673,7 +674,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1392121651
 PrefabInstance:
@@ -684,7 +685,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905902445618790730, guid: 14bf9a321adfd6544ba3ff28726f255e, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1905902445618790730, guid: 14bf9a321adfd6544ba3ff28726f255e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -856,7 +857,7 @@ Transform:
   m_Children:
   - {fileID: 756830635}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2021840457
 PrefabInstance:
@@ -867,7 +868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4648630807566117677, guid: f193509c085b65950ba9ac4648b99f10, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4648630807566117677, guid: f193509c085b65950ba9ac4648b99f10, type: 3}
       propertyPath: m_LocalPosition.x

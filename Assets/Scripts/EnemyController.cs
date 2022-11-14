@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemyFactory.Instance.VesselNum--;
+        if (EnemyFactory.Instance is not null) EnemyFactory.Instance.VesselNum--;
     }
 
     public void SetSpeed(float speed)

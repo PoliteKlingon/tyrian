@@ -66,4 +66,6 @@ Time beyond seminar - ~9.5h
 ## Week 10
 
 HW(05): fixed UI ~1h
-GDD: made the choice, revisited the GDD ~2.5h
+		music ~1.5h
+		enemy AI, homing missiles ~2h
+GDD: made the choice, revisited the GDD ~3h

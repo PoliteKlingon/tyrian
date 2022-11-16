@@ -62,3 +62,8 @@ HW: Done hw04 - UI (The worst part was making the health bar of the player's shi
 GDD: choosing the game + cutting down on features - ~ 1h
 
 Time beyond seminar - ~9.5h
+
+## Week 10
+
+HW(05): fixed UI ~1h
+GDD: made the choice, revisited the GDD ~2.5h

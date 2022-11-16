@@ -9,7 +9,7 @@ public class EnemyGun : MonoBehaviour
     private float delay = 0.25f;
     
     [SerializeField]
-    private float _projectileRadius = 0.25f;
+    private float _projectileRadius = 1.00f;
     [SerializeField]
     private float _projectileSpeed = 20.0f;
 

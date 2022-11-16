@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnvironmentProps : MonoBehaviour
@@ -39,5 +40,14 @@ public class EnvironmentProps : MonoBehaviour
 		result.z = result.z - dz < minZ() ? minZ() + dz : result.z;
 		result.z = result.z + dz > maxZ() ? maxZ() - dz : result.z;
         return result;
+    }
+
+    public Vector3 IntoArea(Vector3 pos)
+    {
+        return new Vector3(
+            Math.Clamp(pos.x, minX(), maxX()),
+            0,
+            Math.Clamp(pos.z, minZ(), maxZ())
+            );
     }
 }

@@ -537,9 +537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf921fd237cdb5ac9b8576e0e5bf16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1871851070003468337, guid: cfe85f9c6b4cda52fb0f783bf3acb78c, type: 3}
+  projectilePrefab: {fileID: 8587677746732311765, guid: 91df457bb6762a02195065e2fa6f3c86, type: 3}
   delay: 1.5
-  _projectileRadius: 0.25
+  _projectileRadius: 1
   _projectileSpeed: 15
 --- !u!114 &3727304447242149545
 MonoBehaviour:
@@ -557,6 +557,7 @@ MonoBehaviour:
   healthBar: {fileID: 3917309989379918834}
   isPlayerShip: 0
   isEnemyShip: 1
+  isEnemyBossShip: 0
   isMeteor: 0
   killPoints: 100
   deathAnimation: {fileID: 8529730313433857519, guid: 1c9cf6572887583ef8355238091c3290, type: 3}

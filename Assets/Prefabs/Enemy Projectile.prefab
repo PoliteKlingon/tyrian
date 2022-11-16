@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2591309632938395262}
   - component: {fileID: 391946650348740234}
   - component: {fileID: 8279694000798547271}
-  - component: {fileID: 8122877138976691627}
   - component: {fileID: 3395506665747855196}
   - component: {fileID: 7875605011063004645}
+  - component: {fileID: 3578458964123881288}
   m_Layer: 9
   m_Name: Enemy Projectile
   m_TagString: Untagged
@@ -103,20 +103,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8122877138976691627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871851070003468337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3495e51da22a8d1f389ef69fc185c10a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 7875605011063004645}
-  collisionDamage: 40
 --- !u!54 &3395506665747855196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -145,11 +131,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0624d55ea763b45bda09807536a8816d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 60
   healthBar: {fileID: 3081845710311891405}
-  reviveOnDestroy: 0
+  isPlayerShip: 0
+  isEnemyShip: 0
+  isEnemyBossShip: 0
+  isMeteor: 0
+  killPoints: 0
   deathAnimation: {fileID: 0}
   hitAnimation: {fileID: 0}
+--- !u!114 &3578458964123881288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871851070003468337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f32772cba5eda8a22b10b8bbdc532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 7875605011063004645}
+  collisionDamage: 60
+  maxSpeed: 30
+  maxAccel: 10
 --- !u!1 &2688536114411812608
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +197,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2688536114411812608}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5197,7 +5203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c984be1d2935b714b86ddacef2f0478a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationX: 250
+  rotationX: 500
   rotationY: 0
   rotationZ: 0
 --- !u!4 &4545009011107609897 stripped

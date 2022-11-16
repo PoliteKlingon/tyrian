@@ -11,10 +11,14 @@ public class MainMenuView : AView
     public override void Initialize()
     {
         settingsButton.onClick.AddListener(() =>
-            UIManager.Show<SettingsMenuView>());
+        {
+            UIManager.Show<SettingsMenuView>();
+        });
         
         creditsButton.onClick.AddListener(() =>
-            UIManager.Show<CreditsMenuView>());
+        {
+            UIManager.Show<CreditsMenuView>();
+        });
         
         startButton.onClick.AddListener(() =>
         {

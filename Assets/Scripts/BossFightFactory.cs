@@ -51,19 +51,16 @@ public class BossFightFactory : MonoBehaviour
     {
         _delay = 0;
         _enemiesLeftToKill = enemiesToKill;
-        Debug.Log("enemies to kill has been reset to " + _enemiesLeftToKill);
     }
 
     public void EnemyKilled()
     {
         _enemiesLeftToKill--;
-        Debug.Log("enemies left to kill: " + _enemiesLeftToKill);
     }
     
     public void RestartEnemiesToKill()
     {
         _enemiesLeftToKill = enemiesToKill;
-        Debug.Log("enemies to kill has been reset to " + _enemiesLeftToKill);
     }
 
     // Update is called once per frame
@@ -74,9 +71,9 @@ public class BossFightFactory : MonoBehaviour
             var bossGO = Instantiate(
                 bossPrefab, 
                 new Vector3(
-                    (EnvironmentProps.Instance.maxX() - EnvironmentProps.Instance.minX()) / 2, 
+                    0, 
                     0,
-                    EnvironmentProps.Instance.maxZ()),
+                    EnvironmentProps.Instance.maxZ() + 5),
                 Quaternion.identity);
             _enemiesLeftToKill++;
         }

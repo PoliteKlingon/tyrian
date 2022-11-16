@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MainGun : MonoBehaviour
@@ -7,6 +8,9 @@ public class MainGun : MonoBehaviour
     private GameObject projectilePrefab;
     [SerializeField]
     private float delay = 0.25f;
+
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip gunSound;
     
     [SerializeField]
     private float _projectileRadius = 0.25f;
@@ -51,7 +55,9 @@ public class MainGun : MonoBehaviour
 
             // set new delay for next spawn
             _delay = delay;
-
+            source.pitch = Random.Range(0.75f, 0.85f);
+            source.volume = Random.Range(0.8f, 1.0f);
+            source.PlayOneShot(gunSound);
             // create new instance of prefab at given position
             var projectileGO = Instantiate(projectilePrefab, new Vector3(x, 0, z), Quaternion.identity);
             //Debug.Log("New projectile shot at: " + projectileGO.transform.position);

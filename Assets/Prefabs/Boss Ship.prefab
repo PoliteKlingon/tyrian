@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 1535129893567414624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.1279185, y: 1.668556, z: -0.15503073}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1791036262237786923}
@@ -214,9 +214,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefa00c7f601283769d212c3c8327bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BombPrefab: {fileID: 8587677746732311765, guid: 91df457bb6762a02195065e2fa6f3c86, type: 3}
-  ProjectilePrefab: {fileID: 1871851070003468337, guid: cfe85f9c6b4cda52fb0f783bf3acb78c, type: 3}
-  BurstProjectilePrefab: {fileID: 1871851070003468337, guid: ab30973b0198d0b80bc465a3895a8de5, type: 3}
+  bombPrefab: {fileID: 1871851070003468337, guid: cfe85f9c6b4cda52fb0f783bf3acb78c, type: 3}
+  projectilePrefab: {fileID: 8587677746732311765, guid: 91df457bb6762a02195065e2fa6f3c86, type: 3}
+  burstProjectilePrefab: {fileID: 1871851070003468337, guid: ab30973b0198d0b80bc465a3895a8de5, type: 3}
+  minReactionDelay: 0.1
+  maxReactionDelay: 0.2
+  numLongShotsToCooldown: 7
+  maxAccel: 20
+  maxSpeed: 5
+  shortFirePointShiftZ: 8
+  shortReloadSeconds: 0.75
+  longReloadSeconds: 0.5
+  burstCooldown: 10
+  longCooldown: 6
 --- !u!1001 &4828670960744747437
 PrefabInstance:
   m_ObjectHideFlags: 0

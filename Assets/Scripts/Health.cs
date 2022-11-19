@@ -46,7 +46,15 @@ public class Health : MonoBehaviour
                 if (source is not null && explosionClip is not null)
                     source.PlayOneShot(explosionClip);
 
-                gameObject.SetActive(false);
+                gameObject.GetComponent<Collider>().enabled = false;
+                foreach (var renderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+                {
+                    renderer.enabled = false;
+                }
+
+                var enemyGun = gameObject.GetComponent<EnemyGun>();
+                if (enemyGun is not null)
+                    enemyGun.enabled = false;
                 Destroy(gameObject, 3.0f);
                 ScoreManager.Instance.AddScore(killPoints);
                 

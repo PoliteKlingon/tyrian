@@ -68,7 +68,9 @@ Time beyond seminar - ~9.5h
 HW(05): fixed UI ~1h
 		music (2h code, 2h recording) ~4h
 		enemy AI, homing missiles, burst shot ~2h
+  (06): small fixes and cleanup ~ 1h
 GDD: made the choice, revisited the GDD ~3h
 	 prepared the presentation ~2h
+	 planning the prototype ~1h
 
-Time beyond seminar - ~12h
+Time beyond seminar - ~14h

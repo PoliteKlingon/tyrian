@@ -9,6 +9,8 @@ public class BossShip : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject burstProjectilePrefab;
     
+    [SerializeField] private float collisionDamage = 50.0f;
+    
     enum State
     {
         ENTER_GAME_ZONE,
@@ -248,5 +250,10 @@ public class BossShip : MonoBehaviour
                 Debug.Assert(false);
                 break;
         }
+    }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 }

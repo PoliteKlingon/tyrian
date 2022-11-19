@@ -15,6 +15,7 @@ public class DeathMenuView : AView
         restartButton.onClick.AddListener(() =>
         {
             DoHide();
+            PauseManager.ResumeGame(hidePauseMenu:false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             UIManager.Show<HUDView>();
         });
@@ -22,6 +23,7 @@ public class DeathMenuView : AView
         returnButton.onClick.AddListener(() =>
         {
             DoHide();
+            PauseManager.ResumeGame(hidePauseMenu:false);
             SceneManager.LoadScene("Game Manager");
             UIManager.Show<MainMenuView>();
         });

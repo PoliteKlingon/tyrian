@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0624d55ea763b45bda09807536a8816d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 10
   healthBar: {fileID: 2202254211518362146}
   isPlayerShip: 0
   isEnemyShip: 0
@@ -155,6 +155,9 @@ MonoBehaviour:
   killPoints: 0
   deathAnimation: {fileID: 0}
   hitAnimation: {fileID: 0}
+  source: {fileID: 0}
+  explosionClip: {fileID: 0}
+  hitClip: {fileID: 0}
 --- !u!136 &343153190216407480
 CapsuleCollider:
   m_ObjectHideFlags: 0

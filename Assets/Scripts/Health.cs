@@ -47,9 +47,13 @@ public class Health : MonoBehaviour
                     source.PlayOneShot(explosionClip);
 
                 gameObject.GetComponent<Collider>().enabled = false;
-                foreach (var renderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+                foreach (var rndr in gameObject.GetComponentsInChildren<MeshRenderer>())
                 {
-                    renderer.enabled = false;
+                    rndr.enabled = false;
+                }
+                foreach (var partSystem in gameObject.GetComponentsInChildren<ParticleSystem>())
+                {
+                    partSystem.Stop();
                 }
 
                 var enemyGun = gameObject.GetComponent<EnemyGun>();
@@ -61,6 +65,7 @@ public class Health : MonoBehaviour
                 if (isPlayerShip)
                 {
                     if (healthBar is not null) healthBar.SetFillLevel(100);
+                    PauseManager.PauseGame(showPauseMenu:false);
                     UIManager.Show<DeathMenuView>(remember:false);
                     UIManager.GetView<DeathMenuView>().ShowScore();
                 }

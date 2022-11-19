@@ -18,12 +18,12 @@ public class EnemyGun : MonoBehaviour
 
     private float _delay;
 
-    private BoxCollider collider;
+    private BoxCollider _collider;
 
     void Awake()
     {
-        collider = GetComponent<BoxCollider>();
-        if (collider == null)
+        _collider = GetComponent<BoxCollider>();
+        if (_collider == null)
         {
             Debug.Log("No collider found!");
         }
@@ -46,9 +46,9 @@ public class EnemyGun : MonoBehaviour
         //horizontal
         float x = this.gameObject.transform.position.x;
         //vertical
-        float z = collider == null
+        float z = _collider == null
             ? this.gameObject.transform.position.z
-            : this.gameObject.transform.position.z - collider.size.z / 2 - collider.center.z;
+            : this.gameObject.transform.position.z - _collider.size.z / 2 - _collider.center.z;
 
         // set new delay for next spawn
         _delay = delay;
@@ -56,7 +56,7 @@ public class EnemyGun : MonoBehaviour
         source.volume = Random.Range(0.8f, 1.1f);
         source.pitch = Random.Range(0.6f, 1.0f);
         
-        if (source is not null && gunSound is not null)
+        if (source != null && gunSound != null)
             source.PlayOneShot(gunSound);
         
         // create new instance of prefab at given position

@@ -27,12 +27,12 @@ public class EnemyController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
+        collision.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 
     private void OnDestroy()
     {
-        if (EnemyFactory.Instance is not null) EnemyFactory.Instance.VesselNum--;
+        if (EnemyFactory.Instance != null) EnemyFactory.Instance.VesselNum--;
     }
 
     public void SetSpeed(float speed)

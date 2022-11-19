@@ -5,7 +5,7 @@ public class SphereController : MonoBehaviour
 {
     public float speed = 5.0f;
 
-    private CapsuleCollider collider;
+    private CapsuleCollider _collider;
     
     [SerializeField]
     public Health health;
@@ -23,8 +23,8 @@ public class SphereController : MonoBehaviour
     
     void Awake()
     {
-        collider = GetComponent<CapsuleCollider>();
-        if (collider == null)
+        _collider = GetComponent<CapsuleCollider>();
+        if (_collider == null)
         {
             throw new Exception("No collider found!");
         }
@@ -86,7 +86,7 @@ public class SphereController : MonoBehaviour
             SetThrusters(frontThrusters, true);
         }
         
-        pos = EnvironmentProps.Instance.IntoArea(pos, collider.radius, collider.height);
+        pos = EnvironmentProps.Instance.IntoArea(pos, _collider.radius, _collider.height);
 
         //set position of gameObject to calculated pos
         transform.position = pos;
@@ -94,6 +94,6 @@ public class SphereController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
+        collision.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 }

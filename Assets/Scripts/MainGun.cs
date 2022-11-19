@@ -19,12 +19,12 @@ public class MainGun : MonoBehaviour
 
     private float _delay;
 
-    private CapsuleCollider collider;
+    private CapsuleCollider _collider;
 
     void Awake()
     {
-        collider = GetComponent<CapsuleCollider>();
-        if (collider == null)
+        _collider = GetComponent<CapsuleCollider>();
+        if (_collider == null)
         {
             Debug.Log("No collider found!");
         }
@@ -49,9 +49,9 @@ public class MainGun : MonoBehaviour
             //horizontal
             float x = this.gameObject.transform.position.x;
             //vertical
-            float z = collider == null
+            float z = _collider == null
                 ? this.gameObject.transform.position.z
-                : this.gameObject.transform.position.z + collider.height / 2 + collider.center.z;
+                : this.gameObject.transform.position.z + _collider.height / 2 + _collider.center.z;
 
             // set new delay for next spawn
             _delay = delay;

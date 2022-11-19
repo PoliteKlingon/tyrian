@@ -45,7 +45,7 @@ public class HomingMissileController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
+        collision.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
     
     

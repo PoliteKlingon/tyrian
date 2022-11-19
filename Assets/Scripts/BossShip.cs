@@ -87,7 +87,7 @@ public class BossShip : MonoBehaviour
     private void ScanEnvironment()
     {
         var ship = GameObject.Find("Ship");
-        if (ship is not null)
+        if (ship != null)
             _enemyPosition = ship.transform.position;
         else
             Debug.Log("ship is null!");
@@ -161,7 +161,7 @@ public class BossShip : MonoBehaviour
         {
             Instantiate(burstProjectilePrefab, transform.position, Quaternion.Euler(0, i, 0));                
         }
-        if (source is not null && burstShotSound is not null)
+        if (source != null && burstShotSound != null)
             source.PlayOneShot(burstShotSound);
     }
 
@@ -171,7 +171,7 @@ public class BossShip : MonoBehaviour
         source.pitch = Random.Range(1.0f, 1.2f);
         
         Instantiate(bombPrefab, transform.position, Quaternion.Euler(0, 180, 0));
-        if (source is not null && longShotSound is not null)
+        if (source != null && longShotSound != null)
             source.PlayOneShot(longShotSound);
     }
     
@@ -180,7 +180,7 @@ public class BossShip : MonoBehaviour
         source.volume = Random.Range(0.8f, 1.1f);
         source.pitch = Random.Range(1.0f, 1.2f);
         Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0, 180, 0));
-        if (source is not null && shortShotSound is not null)
+        if (source != null && shortShotSound != null)
             source.PlayOneShot(shortShotSound);
     }
 
@@ -254,6 +254,6 @@ public class BossShip : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
+        collision.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 }

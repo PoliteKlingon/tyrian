@@ -9,12 +9,6 @@ public class MeteorController : MonoBehaviour
     public Health health;
     [SerializeField]
     private float collisionDamage = 40.0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +26,6 @@ public class MeteorController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        collision.other.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
+        collision.gameObject.GetComponent<Health>()?.DealDamage(collisionDamage);
     }
 }

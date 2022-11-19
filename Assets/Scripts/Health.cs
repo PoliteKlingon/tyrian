@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     private float maxHealth = 100.0f;
     public HealthBar healthBar;
     [SerializeField]
+    
     private bool isPlayerShip = false;
     [SerializeField]
     private bool isEnemyShip = false;
@@ -14,11 +15,17 @@ public class Health : MonoBehaviour
     [SerializeField]
     private bool isMeteor = false;
     [SerializeField]
+    
     private float killPoints = 0;
+    
     [SerializeField]
     private GameObject deathAnimation;
     [SerializeField]
     private GameObject hitAnimation;
+
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip explosionClip;
+    [SerializeField] private AudioClip hitClip;
     
     private float _currentHealth;
     private float CurrentHealth
@@ -35,7 +42,12 @@ public class Health : MonoBehaviour
                     var deathAnim = Instantiate(deathAnimation, transform.position, transform.rotation);
                     Destroy(deathAnim, 2f);
                 }
-                Destroy(gameObject);
+
+                if (source is not null && explosionClip is not null)
+                    source.PlayOneShot(explosionClip);
+
+                gameObject.SetActive(false);
+                Destroy(gameObject, 3.0f);
                 ScoreManager.Instance.AddScore(killPoints);
                 
                 if (isPlayerShip)
@@ -91,6 +103,9 @@ public class Health : MonoBehaviour
             var hitAnim = Instantiate(hitAnimation, transform.position, transform.rotation);
             Destroy(hitAnim, 2f);
         }
+        if (source is not null && hitClip is not null)
+            source.PlayOneShot(hitClip);
+        
         CurrentHealth -= damage;
     }
     /*public void Heal(float heal)

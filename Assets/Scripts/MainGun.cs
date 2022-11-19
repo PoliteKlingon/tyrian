@@ -55,8 +55,8 @@ public class MainGun : MonoBehaviour
 
             // set new delay for next spawn
             _delay = delay;
-            source.pitch = Random.Range(0.75f, 0.85f);
-            source.volume = Random.Range(0.8f, 1.0f);
+            source.pitch = Random.Range(1.00f, 1.15f);
+            source.volume = Random.Range(0.7f, 1.1f);
             source.PlayOneShot(gunSound);
             // create new instance of prefab at given position
             var projectileGO = Instantiate(projectilePrefab, new Vector3(x, 0, z), Quaternion.identity);

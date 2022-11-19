@@ -439,6 +439,9 @@ MonoBehaviour:
   killPoints: 0
   deathAnimation: {fileID: 8529730313433857519, guid: 1c9cf6572887583ef8355238091c3290, type: 3}
   hitAnimation: {fileID: 8529730313433857519, guid: d86b1b94548d19e33bb003f6ef915119, type: 3}
+  source: {fileID: 1348011863884013427}
+  explosionClip: {fileID: 8300000, guid: e5aa48ad37f35dc47bfd6f8a3e1b7754, type: 3}
+  hitClip: {fileID: 8300000, guid: 9453e5ab6dba59f54bac6814e439689b, type: 3}
 --- !u!1 &8590585048415769241
 GameObject:
   m_ObjectHideFlags: 0

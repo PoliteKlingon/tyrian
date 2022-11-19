@@ -27,7 +27,9 @@ public class MainMenuView : AView
         
         exitButton.onClick.AddListener(() =>
         {
+            #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
+            #endif
             Application.Quit();
         });
     }

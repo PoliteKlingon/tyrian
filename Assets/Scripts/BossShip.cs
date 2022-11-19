@@ -145,22 +145,41 @@ public class BossShip : MonoBehaviour
         _burstCooldown -= Time.deltaTime;
     }
     
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip longShotSound;
+    [SerializeField] private AudioClip shortShotSound;
+    [SerializeField] private AudioClip burstShotSound;
+    
     private void BurstShot()
     {
+        source.volume = Random.Range(0.8f, 1.1f);
+        source.pitch = Random.Range(1.0f, 1.2f);
+
         for (float i = 0; i < 360; i += 12)
         {
             Instantiate(burstProjectilePrefab, transform.position, Quaternion.Euler(0, i, 0));                
         }
+        if (source is not null && burstShotSound is not null)
+            source.PlayOneShot(burstShotSound);
     }
 
     private void LongRangeShot()
     {
+        source.volume = Random.Range(0.8f, 1.1f);
+        source.pitch = Random.Range(1.0f, 1.2f);
+        
         Instantiate(bombPrefab, transform.position, Quaternion.Euler(0, 180, 0));
+        if (source is not null && longShotSound is not null)
+            source.PlayOneShot(longShotSound);
     }
     
     private void ShortRangeShot()
     {
+        source.volume = Random.Range(0.8f, 1.1f);
+        source.pitch = Random.Range(1.0f, 1.2f);
         Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0, 180, 0));
+        if (source is not null && shortShotSound is not null)
+            source.PlayOneShot(shortShotSound);
     }
 
     private void shoot()

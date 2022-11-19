@@ -8,6 +8,9 @@ public class EnemyGun : MonoBehaviour
     [SerializeField]
     private float delay = 0.25f;
     
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip gunSound;
+    
     [SerializeField]
     private float _projectileRadius = 1.00f;
     [SerializeField]
@@ -50,6 +53,12 @@ public class EnemyGun : MonoBehaviour
         // set new delay for next spawn
         _delay = delay;
 
+        source.volume = Random.Range(0.8f, 1.1f);
+        source.pitch = Random.Range(0.6f, 1.0f);
+        
+        if (source is not null && gunSound is not null)
+            source.PlayOneShot(gunSound);
+        
         // create new instance of prefab at given position
         var projectileGO = Instantiate(projectilePrefab, new Vector3(x, 0, z), Quaternion.AngleAxis(180.0f, new Vector3(0.0f, 1.0f, 0.0f)));
         //Debug.Log("New projectile shot at: " + projectileGO.transform.position);

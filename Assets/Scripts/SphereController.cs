@@ -20,6 +20,9 @@ public class SphereController : MonoBehaviour
     private GameObject[] frontThrusters;
     [SerializeField]
     private GameObject[] backThrusters;
+
+    private bool _gyroEnabled;
+    private Gyroscope _gyro;
     
     void Awake()
     {
@@ -37,6 +40,18 @@ public class SphereController : MonoBehaviour
             thruster.SetActive(value);
         }
     }
+
+    private bool EnableGyro()
+    {
+        if (SystemInfo.supportsGyroscope)
+        {
+            _gyro = Input.gyro;
+            _gyro.enabled = true;
+            return true;
+        }
+
+        return false;
+    }
     
     private void Start()
     {
@@ -44,6 +59,8 @@ public class SphereController : MonoBehaviour
         SetThrusters(backThrusters, false);
         SetThrusters(leftThrusters, false);
         SetThrusters(rightThrusters, false);
+
+        _gyroEnabled = EnableGyro();
     }
 
     // Update is called once per frame
@@ -84,6 +101,13 @@ public class SphereController : MonoBehaviour
         {
             pos.z -= speed * Time.deltaTime;
             SetThrusters(frontThrusters, true);
+        }
+
+        if (_gyroEnabled)
+        {
+            var inp = _gyro.gravity;
+            pos.x += speed * 5 * inp.x * Time.deltaTime;
+            pos.z += speed * 5 * inp.y * Time.deltaTime;
         }
         
         pos = EnvironmentProps.Instance.IntoArea(pos, _collider.radius, _collider.height);

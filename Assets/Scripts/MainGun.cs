@@ -39,7 +39,11 @@ public class MainGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) 
+#if UNITY_ANDROID
+            || true
+#endif
+            )
         {
             // time elapsed from previous frame
             _delay -= Time.deltaTime;

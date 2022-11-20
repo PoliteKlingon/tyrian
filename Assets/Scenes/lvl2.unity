@@ -155,8 +155,8 @@ MonoBehaviour:
   enemiesToKill: 15
   enemyPrefab: {fileID: 8302553780044930017, guid: c7f1a813c97d7c6adb3212973ac09c6c, type: 3}
   spawnDelay: 0.8
-  shootDelayMin: 2
-  shootDelayMax: 4
+  shootDelayMin: 1.5
+  shootDelayMax: 3
   vesselSpeed: 8
   vesselNumMax: 15
 --- !u!4 &5614321

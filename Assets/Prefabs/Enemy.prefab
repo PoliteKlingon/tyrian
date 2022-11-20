@@ -671,7 +671,7 @@ MonoBehaviour:
   source: {fileID: 2535888050390197060}
   gunSound: {fileID: 8300000, guid: 7d0361ec8d697fe9bb2424544644f784, type: 3}
   _projectileRadius: 1
-  _projectileSpeed: 15
+  _projectileSpeed: 25
 --- !u!114 &3727304447242149545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0624d55ea763b45bda09807536a8816d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 120
   healthBar: {fileID: 3917309989379918834}
   isPlayerShip: 0
   isEnemyShip: 1

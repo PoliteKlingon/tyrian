@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5007794824833516723}
-  collisionDamage: 10
+  collisionDamage: 15
 --- !u!54 &-8194245031050703821
 Rigidbody:
   m_ObjectHideFlags: 0

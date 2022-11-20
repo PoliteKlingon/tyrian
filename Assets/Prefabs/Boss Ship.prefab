@@ -165,13 +165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0624d55ea763b45bda09807536a8816d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 1500
   healthBar: {fileID: 4942997898077905054}
   isPlayerShip: 0
   isEnemyShip: 0
   isEnemyBossShip: 1
   isMeteor: 0
-  killPoints: 1000
+  killPoints: 1500
   deathAnimation: {fileID: 8529730313433857519, guid: 1c9cf6572887583ef8355238091c3290, type: 3}
   hitAnimation: {fileID: 8529730313433857519, guid: d86b1b94548d19e33bb003f6ef915119, type: 3}
   source: {fileID: 3704905298643960554}
@@ -221,6 +221,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 1871851070003468337, guid: cfe85f9c6b4cda52fb0f783bf3acb78c, type: 3}
   projectilePrefab: {fileID: 8587677746732311765, guid: 91df457bb6762a02195065e2fa6f3c86, type: 3}
   burstProjectilePrefab: {fileID: 1871851070003468337, guid: ab30973b0198d0b80bc465a3895a8de5, type: 3}
+  collisionDamage: 50
   minReactionDelay: 0.1
   maxReactionDelay: 0.2
   numLongShotsToCooldown: 7

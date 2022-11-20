@@ -21,6 +21,9 @@ public class ProjectileController : MonoBehaviour
     public void Set(float speed, float radius)
     {
         _speed = speed;
+        #if UNITY_ANDROID
+        _speed = speed - 10;
+        #endif
         _radius = radius;
         transform.localScale = new Vector3(_radius, _radius, _radius);
     }

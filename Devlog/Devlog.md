@@ -70,6 +70,7 @@ HW(05): fixed UI 								~1h
 		enemy AI, homing missiles, burst shot 	~2h
   (06): small fixes and cleanup 				~1h
   		Android version							~1h
+  		Fixing UI scaling						~1h
 GDD: made the choice, revisited the GDD 		~3h
 	 prepared the presentation 					~2h
 	 planning the prototype 					~1h
